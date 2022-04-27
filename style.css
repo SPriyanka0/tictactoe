@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+#app{
+    border:5px solid black ;
+    width: 500px;
+    height: 500px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    background: blue;
+    display: flex;
+    align-items: cneter;
+
+}
+.turn{
+    padding: 10px;
+}
+.gameStatus{
+    text-align: cneter;
+    padding: 10px;
+    flex-grow: 1;
+
+}
+.restart{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
