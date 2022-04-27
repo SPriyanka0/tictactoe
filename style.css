@@ -12,14 +12,14 @@
 .header{
     background: blue;
     display: flex;
-    align-items: cneter;
+    align-items: center;
 
 }
 .turn{
     padding: 10px;
 }
 .gameStatus{
-    text-align: cneter;
+    text-align: center;
     padding: 10px;
     flex-grow: 1;
 
@@ -29,4 +29,29 @@
     justify-content: center;
     display: flex;
     cursor: pointer;
+    border: none;
+    outline: none;
+}
+.gameBoard{
+    display: grid;
+    background: #cccccc;
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.boxes{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+}
+.boxes:hover{
+background: lightgrey;
+}
+.winner{
+    color: red;
 }
