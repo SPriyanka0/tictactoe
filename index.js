@@ -8,11 +8,22 @@ export default class start{
     }
 
     makeMove(i){
+        //stop game when it does not make requirments of inPRogress()
+        //so stops game
+        if(!this.inProgress()){
+            return;
+        }
+
+        //allows a turn 
         if(this.board[i]){
             return;
         }
         this.board[i]= this.turn;
-        this.nextTurn();
+        //to ensure that only allow a turn for the player if on of the array combos have not been seen
+        if(!this.wLogic()){
+            this.nextTurn();
+        }
+        
     }
      //winnign logic = making an array of three # combinations
      wLogic(){
@@ -33,7 +44,14 @@ export default class start{
            }
            return null;
        }  
-     }
+
+       
+    }
+    //to continiue playing the game = none of the winning combinations
+    // and "null" meaning empty space on board
+    inProgress(){
+        return !this.wLogic() && this.board.includes(null);  
+    }
    
 
 }
