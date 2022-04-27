@@ -5,8 +5,11 @@ let ttt = new start();
 let gamePlay = new play(document.getElementById("app"));
 
 gamePlay.onBoard = function(i){
-console.log('tile clicked: ${i}');
+    ttt.makeMove(i);
+    gamePlay.update(ttt);
 }
 gamePlay.refreshClick = function(){
-    console.log("Play Again");
+    ttt = new start();
+    gamePlay.update(ttt);
 }
+gamePlay.update(ttt);
