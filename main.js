@@ -1,15 +1,17 @@
-import play from "./playing.js";
-import start from "/index.js";
+import Start from "./index.js";
+import Playing from "./playing.js";
+let game = new Start();
+let gamePlay = new Playing(document.getElementById("app"));
+//change fromm ttt to game = less confusing
+// define functions
+gamePlay.onBoard = function (i) {
+    game.makeMove(i);
+    gamePlay.update(game);
+};
 
-let ttt = new start();
-let gamePlay = new play(document.getElementById("app"));
+gamePlay.refresh = function () {
+    game = new Start();
+    gamePlay.update(game);
+};
 
-gamePlay.onBoard = function(i){
-    ttt.makeMove(i);
-    gamePlay.update(ttt);
-}
-gamePlay.refreshClick = function(){
-    ttt = new start();
-    gamePlay.update(ttt);
-}
-gamePlay.update(ttt);
+gamePlay.update(game);

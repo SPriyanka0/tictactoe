@@ -1,57 +1,65 @@
-*{
+* {
     box-sizing: border-box;
 }
-#app{
-    border:5px solid black ;
-    width: 400px;
-    height: 400px;
+
+#app {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    font-family: sans-serif;
     font-weight: bold;
     display: flex;
     flex-direction: column;
 }
-.header{
-    background: blue;
+
+.header {
     display: flex;
     align-items: center;
+    background:#5bccf6;
+}
 
+.turn {
+    padding: 12px;
 }
-.turn{
-    padding: 10px;
-}
-.gameStatus{
-    text-align: center;
-    padding: 10px;
+
+.status {
+    padding: 12px;
     flex-grow: 1;
-
+    text-align: center;
 }
-.restart{
+
+.restart {
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-    cursor: pointer;
     border: none;
     outline: none;
+    background: none;
+    cursor: pointer;
 }
-.gameBoard{
+
+.board {
     display: grid;
-    background: #cccccc;
+    background: #fcde67;
     gap: 10px;
     padding: 10px;
     flex-grow: 1;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
-.boxes{
+
+.boxes {
+    background: lightgray;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    font-size: 80px;
+    font-family: cursive;
+    color: #222222;
+}
 
+.boxes:hover {
+    background: gray;
 }
-.boxes:hover{
-background: lightgrey;
-}
-.winner{
-    color: red;
-}
+
