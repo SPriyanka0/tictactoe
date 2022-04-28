@@ -2,29 +2,28 @@ export default class Playing {
     constructor(root) {
         this.root = root;
         //innerHTML for easy access of eventListeners
-        this.root.innerHTML = `
-            <div class="header">
-                <div class="turn"></div>
-                <div class="status"></div>
-                <button type="button" class="restart">
-                    <i class="icon">Play Again!</i>
-                </button>
-            </div>
-            <div class="board">
-                <div class="boxes" data-index="0"></div>
-                <div class="boxes" data-index="1"></div>
-                <div class="boxes" data-index="2"></div>
-                <div class="boxes" data-index="3"></div>
-                <div class="boxes" data-index="4"></div>
-                <div class="boxes" data-index="5"></div>
-                <div class="boxes" data-index="6"></div>
-                <div class="boxes" data-index="7"></div>
-                <div class="boxes" data-index="8"></div>
-            </div>
-        `;
+        //so i put it here so i can see if it works with code on same page-when transferring over to html - it loaded the page weirdly? 
+        this.root.innerHTML = ` <div class="header">
+        <div class="turn"></div>
+        <div class="status"></div>
+        <button type="button" class="restart">
+            <i class="icon">Play Again!</i>
+        </button>
+    </div>
+    <div class="board">
+        <div class="boxes" data-index="0"></div>
+        <div class="boxes" data-index="1"></div>
+        <div class="boxes" data-index="2"></div>
+        <div class="boxes" data-index="3"></div>
+        <div class="boxes" data-index="4"></div>
+        <div class="boxes" data-index="5"></div>
+        <div class="boxes" data-index="6"></div>
+        <div class="boxes" data-index="7"></div>
+        <div class="boxes" data-index="8"></div>
+    </div>`;
+            
+        
 
-        this.onBoard = undefined;
-        this.refresh = undefined;
 
         this.root.querySelectorAll(".boxes").forEach(tile => {
             tile.addEventListener("click", () => {
@@ -42,6 +41,7 @@ export default class Playing {
     }
  //change headers for different parts of the game
        //make one whole function for the whole thing
+       //w3Schools - HTML Game Score update
     update(game) {
         this.playerTurn(game);
         this.gameStatus(game);

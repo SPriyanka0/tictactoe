@@ -1,7 +1,7 @@
 export default class Start {
     constructor() {
         this.turn = "X";
-        this.board = new Array(9).fill(null);
+        this.board = new Array(9).fill(null); //for index 0 to 8
     }
 
     nextTurn() {
@@ -38,7 +38,9 @@ export default class Start {
             [0, 4, 8],
             [2, 4, 6]
         ];
-
+// to figure out what to do with the winning combinations I was unsure to get the connection to winner so..
+//https://stackoverflow.com/questions/70224446/how-to-stop-game-after-the-player-wins-in-xo-game-with-react
+//this code checked back with a, b and c with 'combos' to stop game in playing.js when there is 3 in a row
         for (const combination of combos) {
             const [a, b, c] = combination;
 
